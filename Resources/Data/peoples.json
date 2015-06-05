@@ -1,36 +1,4 @@
-[
-  {
-	"fname":"Jacob",
-	"lname":"Varghese",
-	"tel":"(925)-361-1691",
-	"city":"San Ramon",
-	"state":"CA",
-	"zip":"94582"
-  },
-  {
-	"fname":"James",
-	"lname":"Thomas",
-	"tel":"(925)-828-2807",
-	"city":"San Ramon",
-	"state":"AC",
-	"zip":"12345"
-  },
-  {
-	"fname":"Joshua",
-	"lname":"Varghese",
-	"tel":"(925)-999-9999",
-	"city":"San Ramon",
-	"state":"CO",
-	"zip":"23456"
-  },
-  {
-	"fname":"Jonah",
-	"lname":"Jacob",
-	"tel":"(925)-888-8888",
-	"city":"San Ramon",
-	"state":"CA",
-	"zip":"34567"
-  },  
+[ 
   {
 	"fname":"Betty",
 	"lname":"Gardenhour",
@@ -42,7 +10,7 @@
    {
 	"fname":"Sanil",
 	"lname":"Cherian",
-	"tel":"(925)-361-1691",
+	"tel":"(925)-999-1234",
 	"city":"Pleasonton",
 	"state":"CA",
 	"zip":"99999"
@@ -50,7 +18,7 @@
   {
 	"fname":"Mathew",
 	"lname":"Abraham",
-	"tel":"(925)-828-2807",
+	"tel":"(921)-822-2123",
 	"city":"Walnut Creek",
 	"state":"CA",
 	"zip":"45678"
@@ -72,16 +40,16 @@
 	"zip":"34343"
   },  
   {
-	"fname":"Shate",
-	"lname":"Thomas",
+	"fname":"Shae",
+	"lname":"Thos",
 	"tel":"(991)-816-6767",
 	"city":"Fremont",
 	"state":"CA",
 	"zip":"22334"
   },
   {
-	"fname":"Gena",
-	"lname":"Thomas",
+	"fname":"Gen",
+	"lname":"Thoa",
 	"tel":"(991)-816-2332",
 	"city":"Sacremento",
 	"state":"CA",
