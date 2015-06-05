@@ -1,0 +1,22 @@
+
+<a href="#home"    class="btn btn-success btn-sm">Home</a>
+<a href="#purchase" class="btn btn-danger  btn-sm">Purchase</a>
+<a href="#contact"  class="btn btn-success btn-sm">Contact</a>
+
+<div>
+    <div id="page31" ng-show="{{gridShow}}">
+
+    <strong style="color:white; font-size: 20px">Search By</strong><br>
+        <strong style="color:white"> Name :     </strong>    <input type="text" id="name" ng-model="name.fname" style="color:blue">
+        <strong style="color:white"> LastName : </strong>    <input type="text" id="name" ng-model="name.lname" style="color:blue">
+        <strong style="color:white"> State :    </strong>    <input type="text" id="name" ng-model="name.state" style="color:blue">
+    <br><br>
+
+        <div class="gridStyle" ng-grid="gridOptions"></div>
+
+    </div>
+</div>
+
+<div id="footer">
+    <p>Developed By Jacob V. &copy 2015</p>
+</div>

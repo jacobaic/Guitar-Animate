@@ -1,0 +1,44 @@
+{
+  "allGuitars": [
+    {
+      "Manufacturer": "Fender",
+      "Model": "Special Edition Blacktop Jazzmaster",
+      "Fingerboard":"Maple",
+      "SKU":"100052805",
+      "Price": "1749.99",
+      "Image": "Resources/Assets/Fender-American-Vintage-69.png",
+      "More":"http://haightashburymusic.com/guitars/electric-guitar/fender-american-vintage-69-telecaster-thinline-maple-fingerboard-olympic-white-wcase.html",
+      "Compare":true
+    },
+    {
+      "Manufacturer": "Squier",
+      "Model": "Squier Jazzmaster Electric Guitar Vintage",
+      "Fingerboard":"Rosewood",
+      "SKU":"302100509",
+      "Price": "300.00",
+      "Image": "Resources/Assets/Squier-Jazzmaster.png",
+      "More":"http://haightashburymusic.com/fender-vintage-modified-jazzmaster-rosewood-fingerboard-candy-apple-red-electric-guitar",
+      "Compare":true
+    },
+    {
+      "Manufacturer": "Charvel",
+      "Model": "Desolatio DC-2 ST",
+      "Fingerboard":"Trans Blue Smear",
+      "SKU":"2931121586",
+      "Price": "399.99",
+      "Image": "Resources/Assets/Charvel-DC2ST.png",
+      "More":"http://haightashburymusic.com/charvel-dc2st-set-neck-double-cutaway-electric-guitar-trans-blue-smear",
+      "Compare":true
+    },
+    {
+      "Manufacturer": "Fender",
+      "Model": "Special Edition Blacktop Jazzmaster",
+      "Fingerboard":"Rosewood",
+      "SKU":"140205506",
+      "Price": "499.99",
+      "Image": "Resources/Assets/Fender-Special-Edition.png",
+      "More":"http://haightashburymusic.com/fender-special-edition-blacktop-jazzmaster-hh-stripe-black-with-candy-apple-red-racing-stripe",
+      "Compare":true
+    }
+  ]
+}

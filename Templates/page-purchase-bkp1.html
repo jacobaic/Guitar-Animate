@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<a href="#home"    class="btn btn-success btn-sm">Home</a>
+<a href="#purchase" class="btn btn-danger  btn-sm">Purchase</a>
+<a href="#contact"  class="btn btn-success btn-sm">Contact</a>
+<div id="wrapper">
+
+    </br>
+    <div id="page21">
+        <img class="img-responsive" ng-src="{{buyguitar[guitarindex].Image}}" style="width:225px; height:130px">
+
+        <table id="tabGuitar" border ="3" style="width=100%">
+            <col width="50">
+            <col width="300">
+            <tr>
+                <td> <b>Manufacturer </b></td>
+                <td> {{buyguitar[guitarindex].Manufacturer}} </td>
+            </tr>
+            <tr>
+                <td> <b> Model </b></td>
+                <td> {{buyguitar[guitarindex].Model}}</td>
+            </tr>
+            <tr>
+                <td> <b> Finger Board</b> </td>
+                <td> {{buyguitar[guitarindex].Fingerboard}} </td>
+            </tr>
+            <tr>
+                <td> <b> Price $ </b> </td>
+                <td> {{buyguitar[guitarindex].Price}} </td>
+            </tr>
+            <tr>
+                <td> <b> SKU </b></td>
+                <td> {{buyguitar[guitarindex].SKU}} </td>
+            </tr>
+        </table>
+    </div>
+    <div id="page22">
+        <br/>
+        <h6> Price Details </h6>
+        <br>
+        <table border ="2">
+            <tr>
+                <col width="150">
+                <col width="90">
+            </tr>
+            <tr>
+                <td> Price $ </td>
+                <td> {{buyguitar[guitarindex].Price|number:2}}</td>
+            </tr>
+            <tr>
+                <td> Tax (10%) $ </td>
+                <td> <span>{{buyguitar[guitarindex].Price * 10 /100|number:2}}</span> </td>
+            </tr>
+            <tr>
+                <td> Shipping $ </td>
+                <td> 10.00 </td>
+            </tr>
+            <tr>
+                <td> <b>Total $ </b> </td>
+                <td> <b> {{buyguitar[guitarindex].Price *1 + 10 + buyguitar[guitarindex].Price * 10 /100 |number:2}} </b> </td>
+            </tr>
+        </table>
+    </div>
+    <div id="page23" ng-show="detailTrueFalse">
+        <h5> Fill the Form & Confirm </h5>
+        <form name="myfn" class="myForm">
+            <table border ="2">
+                <tr>
+                    <col width="150">
+                    <col width="400">
+                </tr>
+                <tr>
+                    <td> First Name </td>
+                    <td> <input type="text"  class="textboxclass" name="fname" ng-model="fname" placeholder="Enter First Name" required>
+                        <span ng-show="myfn.fname.$dirty && myfn.fname.$invalid">	</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Last Name </td>
+                    <td>
+                        <input type="text" class="textboxclass" name="lname" ng-model="lname" placeholder="Enter Last Name" required>
+                        <span ng-show="myfn.lname.$dirty && myfn.lname.$invalid"> </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Email </td>
+                    <td>
+                        <input type="email" class="textboxclass" name="eml" ng-model="eml" placeholder="test@gmail.com" required>
+                        <span ng-show="myfn.eml.$dirty && myfn.eml.$invalid"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Address 1 </td>
+                    <td>
+                        <input type="text" class="textboxclass" name="add1" ng-model="add1" placeholder="Enter Address " required>
+                        <span ng-show="myfn.add1.$dirty && myfn.add1.$invalid"> </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Address 2 </td>
+                    <td>
+                        <input type="text" class="textboxclass" name="add2" ng-model="add2" >
+                    </td>
+                </tr>
+                <tr>
+                    <td> Phone No. </td>
+                    <td>
+                        <input type="text" class="phboxclass" ng-model="phnum1" id="phnum1" size="3" onkeyup="phonelen('phnum1','phnum2')">&nbsp;-
+                        <input type="text" class="phboxclass" ng-model="phnum2" id="phnum2" size="3" onkeyup="phonelen('phnum2','phnum3')">&nbsp;-
+                        <input type="text" class="phboxclass" ng-model="phnum3" id="phnum3" size="4">
+                    </td>
+                </tr>
+                <tr>
+                    <td> Credit Card No. </td>
+                    <td>
+                        <input type="text" class="phboxclass" ng-model="crca1" ng-keypress="cardtype()" name="crca1" id="crca1" size="4" onkeyup="crcalen('crca1','crca2')" required>&nbsp;-
+                        <input type="text" class="phboxclass" ng-model="crca2" name="crca2" id="crca2" size="4" onkeyup="crcalen('crca2','crca3')" required>&nbsp;-
+                        <input type="text" class="phboxclass" ng-model="crca3" name="crca3" id="crca3" size="4" onkeyup="crcalen('crca3','crca4')" required>&nbsp;-
+                        <input type="text" class="phboxclass" ng-model="crca4" name="crca4" id="crca4" size="4" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>
+                        <div id="myVisaLogos" ng-show="myVisaCard">
+                            <img src="Resources/Assets/Visa-Logo.png"       width="40" height="30" border="0" />
+                        </div>
+                        <div id="myMasterLogos" ng-show="myMasterCard">
+                            <img src="Resources/Assets/MasterCard-Logo.png" width="40" height="30" border="0" />
+                        </div>
+                        <div id="myAmExLogos" ng-show="myAmExCard">
+                            <img src="Resources/Assets/AmericanEx-Logo.png" width="40" height="30" border="0" />
+                        </div>
+                        <div id="myDiscLogos" ng-show="myDiscCard">
+                            <img src="Resources/Assets/Dicsover-logo.png"   width="40" height="30" border="0" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <button class="btn btn-primary btn-sm"
+                    ng-disabled="myfn.fname.$dirty && myfn.fname.$invalid || myfn.lname.$dirty && myfn.lname.$invalid ||
+  	    					 myfn.eml.$dirty && myfn.eml.$invalid     ||
+  	    					 myfn.crca1.$dirty && myfn.crca1.$invalid || myfn.crca2.$dirty && myfn.crca2.$invalid ||
+  	    					 myfn.crca3.$dirty && myfn.crca3.$invalid || myfn.crca4.$dirty && myfn.crca4.$invalid ||
+  	    					 myfn.fname.$pristine||myfn.lname.$pristine||myfn.eml.$pristine||
+  	    					 myfn.crca1.$pristine||myfn.crca2.$pristine||myfn.crca3.$pristine||myfn.crca4.$pristine"
+                    ng-click=confirm() > Confirm
+            </button>
+        </form>
+    </div>
+    <div id="page24" ng-hide="detailTrueFalse">
+        <h2> Check details & Confirm  </h2> <br/>
+        <table>
+            <col width="150">
+            <col width="400">
+            <tr>
+                <td> <b> Name </b></td>
+                <td> {{fname +' '+ lname}} </td>
+            </tr>
+            <tr>
+                <td> <b> Email</b> </td>
+                <td> {{eml}} </td>
+            </tr>
+            <tr>
+                <td> <b> Address 1</b> </td>
+                <td> {{add1}} </td>
+            </tr>
+            <tr>
+                <td> <b> Address 2 </b> </td>
+                <td> {{add2}} </td>
+            </tr>
+            <tr>
+                <td> <b>Tel. No.</b> </td>
+                <td> {{phnum1}}-{{phnum2}}-{{phnum3}} </td>
+            </tr>
+            <tr>
+                <td> <b> Credit Card No. </b> </td>
+                <td> {{"xxxx-xxxx-xxxx-"}}{{crca4}} </td>
+            </tr>
+        </table>
+        <br/>
+        <button class="btn btn-primary btn-sm" ng-click=buy()  ng-disabled="buyStat"> Buy </button>
+        <button class="btn btn-primary btn-sm" ng-click=edit() ng-disabled="buyStat" > Edit </button>
+        <br>
+        <div id="buyDiv" ng-show="buyStat">
+            <p> <h2> Thank you for your order </h2> </p></br>
+            <p> Your shipment will be delivered within the <b>next 7 working days</b> </p>
+            <p> For any enquiries go to the Contact page for our directory ! </p>
+
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <p>Developed By Jacob V. &copy 2015</p>
+</div>
+</body>
+</html>

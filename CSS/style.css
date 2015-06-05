@@ -1,0 +1,506 @@
+/* BASE STYLES
+============================================================================= */
+html         { overflow-y:hidden; }
+.page        {
+    bottom:0;
+    padding-top:75px;
+    position:absolute;
+    text-align:center;
+    top:0;
+    width:100%;
+}
+
+.page h1 	{ font-size:20px; }
+.page a     { margin-top:10px; }
+#about      { color:#333; position:absolute; text-align:center; top:5px; width:100%; }
+
+/* PAGES
+============================================================================= */
+.page-home 		{ background: #000000; color:#00907c;
+                  background-image:url('../Resources/Assets/Guitar-Background.jpg');
+                  background-size: 100% 100%;}
+.page-about 	{ background: #000000; color:#a55400;
+                  background-image:url('../Resources/Assets/Guitar-Background.jpg');
+                  background-size: 100% 100%;}
+.page-contact 	{ background: #000000; color:#9e0000;
+                  background-image:url('../Resources/Assets/Guitar-Background.jpg');
+                  background-size: 100% 100%;}
+
+/* ANIMATIONS
+============================================================================= */
+
+.page.ng-leave 	{ z-index:9999; }
+.page.ng-enter 	{ z-index:8888; }
+
+/* page specific animations ------------------------ */
+
+/* home -------------------------- */
+.page-home.ng-leave         {
+    -webkit-transform-origin: 0% 0%;
+    -webkit-animation: rotateFall 1s both ease-in;
+    -moz-transform-origin: 0% 0%;
+    -moz-animation: rotateFall 1s both ease-in;
+    transform-origin: 0% 0%;
+    animation: rotateFall 1s both ease-in;
+}
+.page-home.ng-enter 		{
+    -webkit-animation:scaleUp 0.5s both ease-in;
+    -moz-animation:scaleUp 0.5s both ease-in;
+    animation:scaleUp 0.5s both ease-in;
+}
+
+/* about ------------------------ */
+.page-about.ng-leave        {
+    -webkit-animation:slideOutLeft 0.5s both ease-in;
+    -moz-animation:slideOutLeft 0.5s both ease-in;
+    animation:slideOutLeft 0.5s both ease-in;
+}
+.page-about.ng-enter 		{
+    -webkit-animation:slideInRight 0.5s both ease-in;
+    -moz-animation:slideInRight 0.5s both ease-in;
+    animation:slideInRight 0.5s both ease-in;
+}
+
+/* contact ---------------------- */
+.page-contact.ng-leave      {
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation: rotateOutNewspaper .5s both ease-in;
+    -moz-transform-origin: 50% 50%;
+    -moz-animation: rotateOutNewspaper .5s both ease-in;
+    transform-origin: 50% 50%;
+    animation: rotateOutNewspaper .5s both ease-in;
+}
+.page-contact.ng-enter 		{
+    -webkit-animation:slideInUp 0.5s both ease-in;
+    -moz-animation:slideInUp 0.5s both ease-in;
+    animation:slideInUp 0.5s both ease-in;
+}
+
+/* rotate and fall */
+@-webkit-keyframes rotateFall {
+    0% { -webkit-transform: rotateZ(0deg); }
+    20% { -webkit-transform: rotateZ(10deg); -webkit-animation-timing-function: ease-out; }
+    40% { -webkit-transform: rotateZ(17deg); }
+    60% { -webkit-transform: rotateZ(16deg); }
+    100% { -webkit-transform: translateY(100%) rotateZ(17deg); }
+}
+@-moz-keyframes rotateFall {
+    0% { -moz-transform: rotateZ(0deg); }
+    20% { -moz-transform: rotateZ(10deg); -moz-animation-timing-function: ease-out; }
+    40% { -moz-transform: rotateZ(17deg); }
+    60% { -moz-transform: rotateZ(16deg); }
+    100% { -moz-transform: translateY(100%) rotateZ(17deg); }
+}
+@keyframes rotateFall {
+    0% { transform: rotateZ(0deg); }
+    20% { transform: rotateZ(10deg); animation-timing-function: ease-out; }
+    40% { transform: rotateZ(17deg); }
+    60% { transform: rotateZ(16deg); }
+    100% { transform: translateY(100%) rotateZ(17deg); }
+}
+
+/* scale up */
+@keyframes scaleUp {
+    from 		{ opacity: 0.3; transform: scale(0.8); }
+}
+@-moz-keyframes scaleUp {
+    from 		{ opacity: 0.3; -moz-transform: scale(0.8); }
+}
+@-webkit-keyframes scaleUp {
+    from 		{ opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from 	{ transform:translateX(100%); }
+    to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+    from 	{ -moz-transform:translateX(100%); }
+    to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+    from 	{ -webkit-transform:translateX(100%); }
+    to 		{ -webkit-transform: translateX(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from 	{ transform:translateY(100%); }
+    to 		{ transform: translateY(0); }
+}
+@-moz-keyframes slideInUp {
+    from 	{ -moz-transform:translateY(100%); }
+    to 		{ -moz-transform: translateY(0); }
+}
+@-webkit-keyframes slideInUp {
+    from 	{ -webkit-transform:translateY(100%); }
+    to 		{ -webkit-transform: translateY(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+    to 		{ transform: translateX(-100%); }
+}
+@-moz-keyframes slideOutLeft {
+    to 		{ -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideOutLeft {
+    to 		{ -webkit-transform: translateX(-100%); }
+}
+
+/* rotate out newspaper */
+@-webkit-keyframes rotateOutNewspaper {
+    to { -webkit-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+@-moz-keyframes rotateOutNewspaper {
+    to { -moz-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+@keyframes rotateOutNewspaper {
+    to { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+#wrapper
+{
+    position:absolute;
+    border: 1px solid blue;
+    border-radius: 5px;
+    height: auto;
+    width: 100%;
+    display: block;
+    margin: 0 auto -4em;
+}
+
+#footer {
+    bottom:0px;
+    height:30px;
+    right:0%;
+    left:0%;
+    position:fixed!important;
+    position:absolute;
+    width:100%;
+    top:expression((0-(footer.offsetHeight)+ (document.documentElement.clientHeight? document.documentElement.clientHeight: document.body.clientHeight)+(ignoreMe=document.documentElement.scrollTop? document.documentElement.scrollTop:document.body.scrollTop))+'px');
+    text-align:right;
+    padding-right: 50px;
+    visibility:visible;
+    color: #ff400b;
+}
+#buyDiv
+{
+    height: auto;
+    width: auto;
+    border: 2px solid blue;
+    background-color: #88fdf7;
+    color: #bd0005;
+}
+#page21
+{
+    border: 2px groove #36f7ff;
+    border-radius: 5px;
+    height: auto;
+    width: auto;
+    margin: auto;
+    float: left;
+    margin-left: 10px;
+}
+#page22
+{
+
+    border: 2px groove #36f7ff;
+    border-radius: 5px;
+    height: auto;
+    width: auto;
+    margin: auto;
+    float: left;
+    margin-left: 60px;
+}
+#page23
+{
+    border: 2px groove #36f7ff;
+    border-radius: 5px;
+    background-color: #96bbe8;
+    width: auto;
+    float: right;
+    margin-right: 10px;
+}
+#page24
+{
+    border: 2px groove #ff0006;
+    border-radius: 5px;
+    background-color: #fff57a;
+    width: auto;
+    float: right;
+}
+#page31
+{
+    border: 2px groove #71b5ff;
+    border-radius: 5px;
+    height: auto;
+    width: auto;
+    margin: auto;
+    float: left;
+    margin-left: 300px;
+}
+#myVisaLogos
+{
+    height: 50px;
+    width: 50px;
+    float: right;
+}
+#myMasterLogos
+{
+    height: 50px;
+    width: 50px;
+    float: right;
+}
+#myAmExLogos
+{
+    height: 50px;
+    width: 50px;
+    float: right;
+}
+#myDiscLogos {
+    height: 50px;
+    width: 50px;
+    float: right;
+}
+input[type="text"].myFocus
+{
+    background-color: yellow;
+}
+input[type="text"].myBlur
+{
+    background-color: red;
+}
+.animate-if {
+    background:black;
+    border:1px solid black;
+    padding:10px;
+}
+.slide-animate-container {
+    position:relative;
+    background:black;
+    border:1px solid black;
+    height:60px;
+    overflow:hidden;
+}
+
+.slide-animate {
+    padding:10px;
+}
+.myForm input.ng-pristine.ng-invalid
+{
+    background-color: #9baefe;
+}
+.myForm input.ng-dirty.ng-invalid
+{
+    background-color: #fb5e64;
+}
+.myForm input.ng-valid.ng-dirty
+{
+    background-color: #abfebf;
+}
+.p3scroll
+{
+    background-color: #14e7f1;
+    width: auto;
+    height:400px;
+    style-display: none;
+    border-radius: 5px;
+    overflow:scroll;
+}
+#tabGuitar
+{
+    border: 2px groove #ff0006;
+    border-radius: 5px;
+    background-color: #fff57a;
+    width: auto;
+    float: right;
+}
+#myGuitarImg
+{
+    width:450px;
+    height:300px;
+
+    float:left;
+}
+#myGuitarSpecs
+{
+    height: 270px;
+    width: 300px;
+    border: 2px solid red;
+    margin: 5px 5px;
+    padding: 10px;
+    float: left;
+}
+#tabGuitar th, td {
+    background-color: #96bbe8;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: blue;
+}
+.print-clean {
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    text-align: left;
+}
+.gridStyle {
+    border: 2px groove #ff0006;
+    width: 700px;
+    height: 400px;
+}
+/* DIV ANIMATION ng-slide
+============================================================================= */
+.animate-slide {
+    border: 2px groove #36f7ff;
+    border-radius: 5px;
+    background-color: #96bbe8;
+    width: auto;
+    float: right;
+    margin-right: 10px;
+/*    background:red;
+    position:absolute;
+    width: 100%;
+    height:100%;
+    top: 0;*/
+    -webkit-transform: translate3d(0,0,0); /* Chrome, Safari, Opera */
+    transform: translate3d(0,0,0,);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+
+.animate-slide.ng-hide-add,
+.animate-slide.ng-hide-remove {
+    display:block!important;
+}
+
+.animate-slide.ng-hide-remove.ng-hide-remove-active {
+    -webkit-animation:0.5s slide-up;
+    animation:0.5s slide-up;
+}
+
+.animate-slide.ng-hide-add.ng-hide-add-active {
+    -webkit-animation:0.5s slide-down;
+    animation:0.5s slide-down;
+}
+
+.animate-slide.ng-hide {
+    top:80%;
+    display:block!important;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes slide-up
+{
+    0%   {top:80%;}
+    100%  {top:0;}
+}
+
+/* Standard syntax */
+@keyframes slide-up
+{
+    0%   {top:80%;}
+    100%  {top:0;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes slide-down
+{
+    0%  {top:0;}
+    100%   {top:80%;}
+}
+
+/* Standard syntax */
+@keyframes slide-down
+{
+    0%  {top:0;}
+    100%   {top:80%;}
+}
+
+/* DIV ANIMATION
+============================================================================= */
+.at-view-flip-out-vertical.ng-leave {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -ms-transform-origin: center center;
+    -o-transform-origin: center center;
+    transform-origin: center center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 20;
+}
+
+.at-view-flip-out-vertical.ng-leave-active {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    z-index: 10;
+}
+
+.at-view-flip-in-vertical.ng-enter {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -ms-transform-origin: center center;
+    -o-transform-origin: center center;
+    transform-origin: center center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+
+.at-view-flip-in-vertical.ng-enter-active {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    -o-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    z-index: 20;
+}

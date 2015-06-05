@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<a href="#home"    class="btn btn-success btn-sm">Home</a>
+<a href="#purchase" class="btn btn-danger  btn-sm">Purchase</a>
+<a href="#contact"  class="btn btn-success btn-sm">Contact</a>
+
+<div id="wrapper">
+
+    <button class="btn btn-info btn-sm" ng-disabled="firstRec" ng-click="prev()" style="float:left">   Prev    </button>
+    <button class="btn btn-info btn-sm" ng-disabled="lastRec"  ng-click="next()" style="float:right">   Next    </button>
+    </br>
+    <div id="myGuitarImg">
+    <img class="img-responsive" ng-src="{{guitars[index].Image}}" style="width:100%; height:100%; opacity: 0.9">
+    </div>
+    <table class="table table-hover" id="tabGuitar" border ="3" style="opacity: 0.9">
+        <col width="50">
+        <col width="350">
+        <tr>
+            <th> <b> Specification  </b></th>
+            <th> <b> Details        </b></th>
+        </tr>
+        <tr>
+            <td> <b>Manufacturer </b></td>
+            <td> {{guitars[index].Manufacturer}} </td>
+        </tr>
+        <tr>
+            <td> <b>Model </b></td>
+            <td> {{guitars[index].Model}} </td>
+        </tr>
+        <tr>
+            <td> <b>Fingerboard </b></td>
+            <td> {{guitars[index].Fingerboard}} </td>
+        </tr>
+        <tr>
+            <td> <b>Price $ </b></td>
+            <td> {{guitars[index].Price}} </td>
+        </tr>
+        <tr>
+            <td> <b>SKU </b></td>
+            <td> {{guitars[index].SKU}} </td>
+        </tr>
+        <tr>
+            <td> <b>More </b></td>
+            <td> <a ng-href="{{guitars[index].More}}"> More </a> </td>
+        </tr>
+    </table>
+
+</div>
+<div id="footer">
+    <p>Developed By Jacob V. &copy 2015</p>
+</div>
+</body>
+</html>
+
+
