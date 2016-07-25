@@ -16,7 +16,7 @@ animateApp.config(function($routeProvider) {
             controller: 'aboutController'
         })
         .when('/contact', {
-            templateUrl: 'Templates/page-contact-bkp1.html',
+            templateUrl: 'Templates/page-contact-bkp.html',
             controller: 'contactController'
         });
 

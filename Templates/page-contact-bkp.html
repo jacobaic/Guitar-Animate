@@ -1,0 +1,47 @@
+
+<a href="#home"    class="btn btn-success btn-sm">Home</a>
+<a href="#purchase" class="btn btn-danger  btn-sm">Purchase</a>
+<a href="#contact"  class="btn btn-success btn-sm">Contact</a>
+
+<div id="wrapper">
+    <div id="page31">
+
+        <strong style="color:white; font-size: 20px">Search By</strong><br>
+        <strong style="color:white"> Name : </strong>       <input type="text" id="name" ng-model="name.fname" style="color:blue">
+        <strong style="color:white"> LastName : <strong>    <input type="text" id="name" ng-model="name.lname" style="color:blue">
+            <strong style="color:white"> State : </strong>      <input type="text" id="name" ng-model="name.state" style="color:blue">
+            <br><br>
+            <table border="3" style="background-color: #14e7f1; color:blue; opacity: 0.9">
+                <col width="325">
+                <col width="200">
+                <col width="93">
+                <col width="85">
+                <tr>
+                    <th> Name      </th>
+                    <th> Phone     </th>
+                    <th> State     </th>
+                    <th> Zip       </th>
+                </tr>
+            </table>
+            <div class="p3scroll" style="width:100%; opacity: 0.8">
+                <table border ="1">
+                    <col width="325">
+                    <col width="200">
+                    <col width="93">
+                    <col width="85">
+                    <tr  ng-repeat="index in peoples|filter:name|orderBy:'fname+lname'">
+                        <td> {{(index.fname)+' '+index.lname}} </td>
+                        <td> {{index.tel}}   </td>
+                        <td> {{index.state}} </td>
+                        <td> {{index.zip}}   </td>
+                    </tr>
+                </table>
+            </div>
+            </strong>
+        </strong>
+    </div>
+</div>
+
+<div id="footer">
+    <p>Developed By Jacob V. &copy 2015</p>
+</div>
